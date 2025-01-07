@@ -10,6 +10,7 @@ This application uses Amazon Bedrock Knowledge Base - Chat with document feature
 ## Prerequisites
 
 - Python 3.7 or later on your local machine
+- Python Conda
 - AWS CLI installed and [configured with appropriate credentials](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html)
     - Set the region to where you would like to run this invoice processor by following the Set up AWS Credentials and Region for Development documentation.
     
@@ -29,26 +30,27 @@ This application uses Amazon Bedrock Knowledge Base - Chat with document feature
     cd </path/to/your/folder>/genai-invoice-processor
     ```
 
-3. Upgrade pip
+3. Create a virtual environment to isolate dependencies:
+    ```bash
+    conda create -n venv
+    conda activate venv
+    ```
+
+4. Upgrade pip
     ```bash
     python3 -m pip install -–upgrade pip
     ```
-4. (Optionally) create a virtual environment to isolate dependencies:
+
+5. Install `apache-arrow` to resolve issue with `pyarrow`
     ```bash
-    python3 -m venv venv
+    # MacOS
+    brew install apache-arrow
     ```
-    
-    Activate the virtual environment:
-    
-    Mac/Linux: `source venv/bin/activate`
-    
-    Windows: `venv/Scripts/activate`
-
-
 
 6. Install the necessary Python packages:
     ```bash
-    pip install -r requirements.txt
+    pip3 install cmake
+    pip3 install -r requirements.txt
     ```
 
 7. Update the `region` in the config.yaml file to the same region set for your AWS CLI where Bedrock and Anthropic Claude 3 Sonnet model is available. 
