@@ -32,7 +32,7 @@ This application uses Amazon Bedrock Knowledge Base - Chat with document feature
 
 3. Create a virtual environment to isolate dependencies:
     ```bash
-    conda create -n venv
+    conda create -n venv python=3.11.5
     conda activate venv
     ```
 
