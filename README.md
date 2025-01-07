@@ -36,24 +36,21 @@ This application uses Amazon Bedrock Knowledge Base - Chat with document feature
     conda activate venv
     ```
 
-4. Upgrade pip
-    ```bash
-    python3 -m pip install -–upgrade pip
-    ```
-
-5. Install `apache-arrow` to resolve issue with `pyarrow`
+4. Install `apache-arrow` to resolve issue with `pyarrow`
     ```bash
     # MacOS
     brew install apache-arrow
+
+    # Other OS, please refer to https://arrow.apache.org/install/
     ```
 
-6. Install the necessary Python packages:
+5. Install the necessary Python packages:
     ```bash
     pip3 install cmake
     pip3 install -r requirements.txt
     ```
 
-7. Update the `region` in the config.yaml file to the same region set for your AWS CLI where Bedrock and Anthropic Claude 3 Sonnet model is available. 
+6. Update the `region` in the config.yaml file to the same region set for your AWS CLI where Bedrock and Anthropic Claude 3 Sonnet model is available. 
 
 ## Create a S3 bucket to store the invoices via console or AWS CLI 
 
